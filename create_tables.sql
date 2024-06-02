@@ -1,0 +1,101 @@
+DROP DATABASE IF EXISTS project;
+CREATE DATABASE project;
+USE project;
+
+CREATE TABLE Customer (
+    ID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    EmailAddress VARCHAR(100) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    LoyaltyProgram VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE MenuItem (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Description VARCHAR(200) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE MenuItemIngredient (
+    MenuItemID INT,
+    Ingredient VARCHAR(50),
+    FOREIGN KEY (MenuItemID) REFERENCES MenuItem(ID)
+);
+
+CREATE TABLE ORDERS (
+    ID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATETIME NOT NULL,
+    PaymentMethod VARCHAR(50) NOT NULL,
+    TotalPrice DECIMAL(10, 2) NOT NULL,
+    OrderStatus VARCHAR(50) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(ID)
+);
+
+CREATE TABLE INCLUDES (
+    OrderID INT NOT NULL,
+    MenuItemID INT NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES ORDERS(ID),
+    FOREIGN KEY (MenuItemID) REFERENCES MenuItem(ID)
+);
+
+CREATE TABLE OrderItem (
+    OrderID INT,
+    MenuItemID INT,
+    QUANTITY INT,
+    FOREIGN KEY (OrderID) REFERENCES ORDERS(ID),
+    FOREIGN KEY (MenuItemID) REFERENCES MenuItem(ID)
+);
+
+CREATE TABLE Reservation (
+    ID INT PRIMARY KEY,
+    CustomerID INT,
+    DateTime DATETIME NOT NULL,
+    NumGuests INT NOT NULL,
+    TableNumber INT NOT NULL,
+    VIP VARCHAR(200),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(ID)
+);
+
+CREATE TABLE TABLES (
+    ID INT PRIMARY KEY,
+    TableNumber INT NOT NULL,
+    Capacity INT NOT NULL
+);
+
+CREATE TABLE TABLESTATUS (
+    ID INT PRIMARY KEY,
+    Status VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Staff (
+    ID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    EmailAddress VARCHAR(100) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    SCHEDULE VARCHAR(30) NOT NULL,
+    payrate VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Supplier (
+    ID INT PRIMARY KEY,
+    SupplierName VARCHAR(50) NOT NULL,
+    EmailAddress VARCHAR(100) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    ProductList VARCHAR(30) NOT NULL,
+    PriceList INT NOT NULL,
+    DeliverySchedule DATETIME NOT NULL
+);
+
+CREATE TABLE Payment (
+    ID INT PRIMARY KEY,
+    CustomerID INT,
+    PaymentDate DATETIME NOT NULL,
+    PaymentMethod VARCHAR(50) NOT NULL,
+    PaymentAmount DECIMAL(10, 2) NOT NULL,
+    PaymentStatus VARCHAR(50) NOT NULL,
+    Offer VARCHAR(20) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(ID)
+);
