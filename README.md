@@ -21,9 +21,10 @@ The Restaurant Management Data Analysis project leverages SQL for data extractio
 9. **Table with Most Reservations:** Determine which tables are most frequently reserved.
 10. **Customer with Most Orders:** Identify customers who place the highest number of orders.
 
-##  ER-DIAGRAM :- 
-
-ER-Diagram of restaurent management.png
+# Skills
+  
+**Python**  
+**SQL**  
 
 ## Entities and Attributes
 
