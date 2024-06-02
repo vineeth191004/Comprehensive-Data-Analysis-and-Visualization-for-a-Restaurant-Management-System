@@ -84,7 +84,7 @@ The Restaurant Management Data Analysis project leverages SQL for data extractio
 7. A menu item can have many orders and an order can have many menu items (many-to-many relationship).
 8. A reservation can have one table and a table can be associated with many reservations (one-to-many relationship).
 
-After filling data in the following tables following functional dependencies are observed and they are normalised upto BCNF.
+After filling data in the following tables following functional dependencies are observed.
 
 ## Functional Dependencies and Normalisation
 
@@ -123,4 +123,6 @@ After filling data in the following tables following functional dependencies are
 10. **Payment**
     - ID → Payment Date, Payment Method, Payment Amount, Offer, Payment Status
     - Customer ID → ID
+
+All the tables which are in [create_tables.sql](https://github.com/vineeth191004/Comprehensive-Data-Analysis-and-Visualization-for-a-Restaurant-Management-System/blob/main/create_tables.sql) file are normalised upto BCNF. 
 
