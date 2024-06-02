@@ -83,3 +83,44 @@ The Restaurant Management Data Analysis project leverages SQL for data extractio
 6. One payment can be made by one customer (one-to-many relationship).
 7. A menu item can have many orders and an order can have many menu items (many-to-many relationship).
 8. A reservation can have one table and a table can be associated with many reservations (one-to-many relationship).
+
+After filling data in the following tables following functional dependencies are observed and they are normalised upto BCNF.
+
+## Functional Dependencies and Normalisation
+
+1. **Customer**
+   - ID → First Name, Email Address, Phone Number, Loyalty Program
+   - Email Address → ID
+   - Phone Number → ID
+
+2. **Order**
+   - ID → Customer ID, Order date, Payment Method, Total Price, Status
+   - ID → Name, Description, Price
+
+3. **Order Item**
+   - Order ID → Menu Item ID, Quantity
+
+4. **Menu Item**
+   - ID → Name, Description, Price
+
+5. **Reservation**
+   - ID → Customer ID, Date/Time, Num Guests, Table Number, VIP
+
+6. **Table**
+   - ID → Table Number, Capacity
+
+7. **Table Status**
+   - ID → Status
+
+8. **Staff**
+   - ID → First Name, Last Name, Email Address, Phone No., Schedule, Payrate
+   - Email Address → ID
+   - Phone Number → ID
+
+9. **Supplier**
+   - ID → Supplier Name, Email Address, Phone Number, Product List, Price List, Delivery Schedule
+
+10. **Payment**
+    - ID → Payment Date, Payment Method, Payment Amount, Offer, Payment Status
+    - Customer ID → ID
+
