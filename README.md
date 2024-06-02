@@ -126,3 +126,11 @@ After filling data in the following tables following functional dependencies are
 
 All the tables which are in [create_tables.sql](https://github.com/vineeth191004/Comprehensive-Data-Analysis-and-Visualization-for-a-Restaurant-Management-System/blob/main/create_tables.sql) file are normalised upto BCNF. 
 
+## Data Visualization
+Data is visualized using Python libraries (`matplotlib` and `seaborn`). Various plots are created to represent different aspects of the data:
+- **Bar Plots**: For categorical data distribution and comparisons.
+- **Pie Charts**: For showing proportions of categorical data.
+- **Count Plots**: For displaying frequency counts of categorical data.
+
+
+
