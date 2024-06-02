@@ -21,11 +21,64 @@ The Restaurant Management Data Analysis project leverages SQL for data extractio
 9. **Table with Most Reservations:** Determine which tables are most frequently reserved.
 10. **Customer with Most Orders:** Identify customers who place the highest number of orders.
 
-## Skills
+##  ER-DIAGRAM :- 
 
-**SQL**
-**Python**
+ER-Diagram of restaurent management.png
 
-## Overview
+## Entities and Attributes
 
-##
+1. **Customer**
+   - Customer name
+   - Customer contact information
+   - Customer order history
+   - Customer loyalty program status
+
+2. **Menu Item**
+   - Menu name
+   - Menu description
+   - Menu price
+   - Menu ingredients
+   - Menu allergens
+
+3. **Order**
+   - Items ordered
+   - Quantity
+   - Total price
+   - Time and date of the order
+   - Payment method
+
+4. **Reservation**
+   - Date and time of reservation
+   - Number of guests
+   - Table number
+   - Special requests
+
+5. **Staff**
+   - Staff name
+   - Staff contact information
+   - Staff role
+   - Staff schedule
+   - Staff pay rate
+
+6. **Table**
+   - Table number
+   - Table capacity
+   - Table location
+   - Table status
+
+7. **Payment**
+   - Payment time and date
+   - Payment amount
+   - Payment method
+   - Discounts or promotions applied
+
+## Relationships
+
+1. One order can have many menu items (one-to-many relationship).
+2. One menu item can be included in many orders (one-to-many relationship).
+3. One reservation can be made by one customer (one-to-many relationship).
+4. One staff member can serve many reservations (one-to-many relationship).
+5. One supplier can supply many menu items (one-to-many relationship).
+6. One payment can be made by one customer (one-to-many relationship).
+7. A menu item can have many orders and an order can have many menu items (many-to-many relationship).
+8. A reservation can have one table and a table can be associated with many reservations (one-to-many relationship).
